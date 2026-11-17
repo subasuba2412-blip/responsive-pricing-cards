@@ -1,0 +1,235 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #080b18, #15112b, #080b18);
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.pricing-section {
+    width: 100%;
+    padding: 70px 20px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.tagline {
+    color: #5eead4;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.heading h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.heading > p:last-child {
+    color: #a7a9bd;
+}
+
+.billing-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    background: #171c32;
+    width: fit-content;
+    margin: 0 auto 55px;
+    padding: 7px;
+    border-radius: 30px;
+}
+
+.billing-toggle button {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: transparent;
+    color: #c5c8d9;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.billing-toggle button.active {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white;
+}
+
+.pricing-container {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    align-items: center;
+}
+
+.pricing-card {
+    position: relative;
+    background: rgba(24, 30, 54, 0.9);
+    border: 1px solid #303957;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.5);
+}
+
+.pricing-card h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #a7a9bd;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 42px;
+    font-weight: bold;
+    color: #5eead4;
+}
+
+.price::before {
+    content: "₹";
+    font-size: 25px;
+    vertical-align: top;
+}
+
+.unit {
+    color: #a7a9bd;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.pricing-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.pricing-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid #303957;
+    color: #e0e3f0;
+    font-size: 14px;
+}
+
+.pricing-card li::before {
+    content: "✓";
+    color: #5eead4;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.plan-btn {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #6366f1;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.plan-btn:hover {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+}
+
+.popular {
+    border: 2px solid #a855f7;
+    transform: scale(1.04);
+}
+
+.popular:hover {
+    transform: scale(1.04) translateY(-6px);
+}
+
+.ribbon {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    width: 120px;
+    padding: 6px;
+    background: #8b5cf6;
+    color: white;
+    font-size: 11px;
+    transform: rotate(35deg);
+}
+
+.best-value {
+    background: #0d9488;
+}
+
+@media (max-width: 800px) {
+    .pricing-container {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+    .popular {
+        order: -1;
+        transform: none;
+    }
+
+    .popular:hover {
+        transform: translateY(-6px);
+    }
+
+    .heading h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 400px) {
+    .pricing-section {
+        padding: 45px 15px;
+    }
+
+    .heading h1 {
+        font-size: 28px;
+    }
+
+    .pricing-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pricing-card,
+    .billing-toggle button,
+    .plan-btn {
+        transition: none;
+    }
+
+    .pricing-card:hover,
+    .popular:hover {
+        transform: none;
+    }
+}
+
+.billing-toggle button:focus-visible,
+.plan-btn:focus-visible {
+    outline: 3px solid #5eead4;
+    outline-offset: 4px;
+}
